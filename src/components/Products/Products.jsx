@@ -33,6 +33,12 @@ useEffect(()=>{
   })
 }, [])
 
+const removecart=()=>{
+  cart.filter((id)=>{
+    return id==cart.id
+  })
+}
+
   return <div >
     <h1>Products</h1>
     <div className={styles.box} >
@@ -43,7 +49,7 @@ useEffect(()=>{
           <button onClick={handleCountplus}>+</button>
           <p>{count}</p>
           <button onClick={handleCountmin}>-</button>
-          <button>Remove from Cart</button>
+          <button id={el.id} onClick={removecart} >Remove from Cart</button>
         </div>
     })}
     </div>
